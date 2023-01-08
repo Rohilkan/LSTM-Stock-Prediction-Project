@@ -35,14 +35,14 @@ Figure 2. Bar Graph of Percentage change of Stock Price for Six Companies over t
 
 Question 2
 Methods:
-I aimed to model stock adjusted close prices of the six companies during and after the pandemic period (after 2019-12-01) using LSTM and we also constructed Linear Regression as our baseline model. I wrote a function ‘covid_data’ to select adjusted close price from above specific period and set ‘Date’ as index.
+I aimed to model stock adjusted close prices of the six companies during and after the pandemic period (after 2019-12-01) using LSTM and I also constructed Linear Regression as our baseline model. I wrote a function ‘covid_data’ to select adjusted close price from above specific period and set ‘Date’ as index.
 (1) Neural Network LSTM model:
 I combined data preparation, Neuro Network Construction, and Testing by defining a function: my_LSTM.
 Data preparation: I set 70% of the prepared data to be training data and then tested the model on the remaining 30%. For the training data, I used 15 previous days to predict a single following day by setting window_size to 15. I created a nested array, denoted by x_train to store each 15-day data series (i.e. the first element in the nested array was the array of raw data indexed from 0 to 15 inclusively, and the second element was the raw data indexed from 1 to 16 inclusively…). Correspondingly, I created another 1d array y_train to store each 16th-day data (raw data indexed from 16, 17,…). The LSTM utilized a neural network to fit x_train to y_train. I also scaled the data to range (0,1) for a more efficient training. 
 Neural Network Construction: The first layer contained 64 neurons and the second layer contained 34 neurons. I used the non-linear ‘Relu’ as the activation function for each layer. Additionally,  I added a ‘Dropout’ layer to avoid overfitting.
 Testing: After training our neural network model, I tested it on the remaining 30% data. I first did the similar operation as in the data preparation step by creating a nested array X_test to store the data into the correct format. Our model took X_test as input and returned an array of predicted values, together with the mean square error of prediction. Note that before the calculation of mean square error, I applied ‘scaler.inverse_transform’ on the predicted values so that it stayed in the same scale with y_test.
 (2) Baseline Model—Linear Regression:
-We defined the function my_LinearRegression
+I defined the function my_LinearRegression
 Data preparation: To ensure the compatibility of our baseline model with LSTM,  I set the same 70% of the prepared data to be training data and then tested on the remaining 30%. In order to apply linear regression on time series data, I changed the reference of ‘Data’ by adding a ‘Time’ column, labeling the Date in numerical order 0,1,2…
 Testing: After testing the model on the remaining 30% data, the linear model returned the prediction results together with R-squared value and mean square error.
 (3) Visualization
