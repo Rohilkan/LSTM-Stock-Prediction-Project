@@ -1,4 +1,4 @@
-# stockPredictML
+# LSTM-Stock-Prediction
 Leveraging LSTM to predict performance of post-COVID era stocks
 
 Part 1: Introduction and Research Questions
