@@ -1,7 +1,8 @@
-# stockPredictML
+# LSTM-Stock-Prediction
 Leveraging LSTM to predict performance of post-COVID era stocks
 
 Part 1: Introduction and Research Questions
+
 The stock market is an essential part of a free-market economy. It helps companies to raise capital, creates personal wealth, and increases investment in the economy. It is an indicator of a nation’s economy. Thus, through exploring the stock market, I can have a general view of the country’s economy. In this project, I wanted to understand the stock market through the means of programming. I plan to make stock price predictions and investigate the price fluctuation factors related to social events and industry performances. One can discuss the influence of economics by looking through the price change during and after the pandemic (2019-2022) among companies in different industries, and will compare patterns of selected stocks to analyze the stock market. 
 The specific research questions are divided into two parts:
 How did the pandemic affect the stocks in different industries including technology (Apple, Microsoft, and Meta), communication (Zoom), medicine (Pfizer), and tourism (Airbnb)?
